@@ -1,12 +1,18 @@
 package ru.antufiev.application.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Ticket {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private Integer id;
+  private Integer ticketId;
 
   private String title;
   private String description;
@@ -25,8 +31,8 @@ public class Ticket {
 
   public Ticket () {}
 
-  public Ticket(Integer id, String title, String description, Application application, Release release, String status) {
-    this.id = id;
+  public Ticket(Integer ticketId, String title, String description, Application application, Release release, String status) {
+    this.ticketId = ticketId;
     this.title = title;
     this.description = description;
     this.application = application;
@@ -35,11 +41,11 @@ public class Ticket {
   }
 
   public Integer getId() {
-    return id;
+    return ticketId;
   }
 
   public void setId(Integer id) {
-    this.id = id;
+    this.ticketId = id;
   }
 
   public String getTitle() {

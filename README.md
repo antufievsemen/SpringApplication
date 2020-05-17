@@ -1,2 +1,0 @@
-# SpringApplication
-Spring framework application 
